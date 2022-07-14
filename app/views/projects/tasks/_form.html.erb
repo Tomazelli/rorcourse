@@ -1,0 +1,39 @@
+<%= form_for [@project, @task] do |f| %>
+    <% if @task.errors.any? %>
+        <%= pluralize(@task.errors.count, "error" ) %> prohibited this project from being saved:
+
+        <% @task.errors.full_messages.each do |message| %>
+            <%= message %>
+        <% end %>
+    <% end %>
+    <div>
+        <%= f.label :title %>
+        <br/>
+        <%= f.text_field :title %>
+    </div>
+
+    <div>
+    <%= f.label :description %>
+    <br/>
+    <%= f.text_area :description %>
+    </div>
+
+    <div>
+    <%= f.label :completed %>
+    <br/>
+    <%= f.check_box :completed %>
+    </div>
+
+    <div>
+    <%= f.label "Attachment" %>
+    <br/>
+    <%= f.file_field :task_file %>
+    <br/>
+    </div>
+
+    <div>
+    <br/>
+    <%= f.submit %>
+    </div>
+
+<% end %>

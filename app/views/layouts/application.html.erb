@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taski</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="logo">
+    <%= image_tag("logos/jurassic parker.jpg", width: '100px') %>
+    </div>
+    <%= render "shared/nav" %>
+    <%= render "shared/alerts" %>
+
+    <%= yield %>
+  </body>
+</html>

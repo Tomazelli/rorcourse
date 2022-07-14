@@ -1,0 +1,8 @@
+<p>Find me in app/views/shared/_projects.html.erb</p>
+
+<% @projects.each do |project| %>
+
+  <h3><%#= project.inspect %><strong><%= project.title %></strong></h3>
+  <p><em><%= project.description %></em> <%= " | #{project.percent_complete}" unless !project.percent_complete %></p>
+
+<% end %>
